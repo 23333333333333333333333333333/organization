@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc overview
- * @name organizationApp
+ * @name organizationAppApp
  * @description
- * # organizationApp
+ * # organizationAppApp
  *
  * Main module of the application.
  */
 angular
-  .module('organizationApp', [
+  .module('organizationAppApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
@@ -25,9 +25,12 @@ angular
         controllerAs: 'main'
       })
       .when('/about', {
-        templateUrl: 'views/about.html',
+        templateUrl: 'views/index.html',
         controller: 'AboutCtrl',
         controllerAs: 'about'
+      })
+      .when('/contact',{
+        templateUrl:'views/organizationMessage.html'
       })
       .otherwise({
         redirectTo: '/'
