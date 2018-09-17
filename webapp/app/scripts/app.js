@@ -15,24 +15,29 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
-  ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
-      })
-      .when('/about', {
-        templateUrl: 'views/index.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
-      })
-      .when('/contact',{
-        templateUrl:'views/organizationMessage.html'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
+    'ngTouch',
+    'ui.router'
+  ]).config(function($provide) {
+    var callback = function(data) {
+      $provide.constant('stateConfig', data);
+    };
+    $.ajax({
+      url: "http://localhost:9000/config/config.json",
+      dataType: "json",
+      success: callback,
+      async: false
+    });
+
+  })
+  .config(function($stateProvider, $urlRouterProvider, stateConfig) {
+    angular.forEach(stateConfig, function(value) {
+      $stateProvider
+        .state({
+          name: value.name,
+          url: value.url,
+          templateUrl: value.templateUrl,
+          controller: value.controller
+        });
+    });
+    $urlRouterProvider.otherwise('/');
   });

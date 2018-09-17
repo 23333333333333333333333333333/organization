@@ -1,0 +1,20 @@
+[
+	{
+		"name": "index",
+		"url": "/",
+		"templateUrl": "views/index.html",
+		"controller": "IndexCtrl"
+	},
+	{
+		"name": "personalCenter",
+      	"url": "/personalCenter",
+      	"templateUrl": "views/personalCenter/personalCenter.html",
+      	"controller": "PersonalcenterCtrl"
+	},
+	{
+		"name": "organizationMessage",
+      	"url": "/organizationMessage",
+      	"templateUrl": "views/organizationMessage/organizationMessage.html",
+      	"controller": "OrganizationmessageCtrl"
+	} 
+]

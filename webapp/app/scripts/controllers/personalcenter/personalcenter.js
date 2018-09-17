@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name organizationAppApp.controller:AboutCtrl
+ * @name organizationAppApp.controller:PersonalcenterPersonalcenterCtrl
  * @description
- * # AboutCtrl
+ * # PersonalcenterPersonalcenterCtrl
  * Controller of the organizationAppApp
  */
 angular.module('organizationAppApp')
-  .controller('AboutCtrl', function () {
+  .controller('PersonalcenterCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
